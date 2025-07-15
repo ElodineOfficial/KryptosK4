@@ -38,7 +38,7 @@ SE
 + 8
 PALIMPSEST
 
-Flatten the permuted grid back into one 24‑letter string (row by row).
+3. Flatten the permuted grid back into one 24‑letter string (row by row).
 Apply the Caesar shift to each letter: convert letter→number, add the shift, mod 26, convert back.
 Vigenère‑decrypt with the given key:
 Repeat the key to length 24.
@@ -50,7 +50,7 @@ NE_pt = JNREASTZDLTFBXUJLBFJDALS
 SW_pt = LZYAMAFHKEASTFYBKQCVPIQA  
 SE_pt = WEDKGSSXZSQQEKQNWESTDIRR  
 
-3. Build the first half of the message (SW ↔ SE)
+4. Build the first half of the message (SW ↔ SE)
 Rotate the SW_pt string left by 12 letters.
  e.g. if SW_pt = ABC… (24 letters), rotated = letters 13–24 then 1–12.
 Compute a 24‑letter “difference” string Δ where for each position i:
@@ -65,7 +65,7 @@ C L B O H L
 Re‑order by the “geometric tour” index sequence (row‑major positions 0…23): [0,9,16,21,14,19,8,3,10,5,12,17,22,15,20,11,6,1,4,13,18,23,2,7] That means your final first‑half message is the letters at those indices in the 24‑letter row‑major string:
 DONOTLOCATETHEBERLINCLOC
 
-4. Build the second half of the message (NW ↔ NE)
+5. Build the second half of the message (NW ↔ NE)
 Exactly mirror the SW ↔ SE process, but with NW_pt and NE_pt:
 Rotate NW_pt left by 12.
 Form Δ′ where for each i:
