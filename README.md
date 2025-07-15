@@ -1,6 +1,7 @@
 This is a technical text dump of how these scripts work and solve the first half of K4.
 
 Raw K4: OBKR UOXOGHULBSOLIFBBWFLRVQQPRNGKSSO TWTQSJQSSEKZZWATJKLUDIAWINFBNYP VTTMZFPKWGDKZXTJCDIGKUHUAUEKCAR
+
 Here’s a step‑by‑step recipe you can execute entirely by hand. Wherever you see “letter→number,” use A = 0, B = 1, …, Z = 25, and whenever you “mod 26,” if you get a negative result add 26, or if ≥ 26 subtract 26.
 
 1. Clean and split the raw K4 text
@@ -63,6 +64,7 @@ E N T E N T
 C L B O H L
 Re‑order by the “geometric tour” index sequence (row‑major positions 0…23): [0,9,16,21,14,19,8,3,10,5,12,17,22,15,20,11,6,1,4,13,18,23,2,7] That means your final first‑half message is the letters at those indices in the 24‑letter row‑major string:
 DONOTLOCATETHEBERLINCLOC
+
 4. Build the second half of the message (NW ↔ NE)
 Exactly mirror the SW ↔ SE process, but with NW_pt and NE_pt:
 Rotate NW_pt left by 12.
@@ -70,7 +72,7 @@ Form Δ′ where for each i:
  Δ′ᵢ = (NE_ptᵢ – rotated_NW_ptᵢ) mod 26 → letter
 Caesar‑shift Δ′ by – 15.
 Vigenère‑decrypt with key “LICHT.” You get:
- JLXWLHAXOSTWEOKSEWFNTEEX
+JLXWLHAXOSTWEOKSEWFNTEEX
 Lay into 4×6 grid and apply the same tour index sequence. The result is:
 JSEEKNOWTHEWESTWALLOFXXX
 Final result so far
