@@ -65,7 +65,7 @@ Read squares in this order:
 0 →  9 → 16 → 21 → 14 → 19 →  8 →  3 →
 10 → 5 → 12 → 17 → 22 → 15 → 20 → 11 →
  6 → 1 →  4 → 13 → 18 → 23 →  2 →  7
-
+Result: DONOTLOCATETHEBERLINCLOC
 
 6. Build the second half of the message (NW ↔ NE)
 Exactly mirror the SW ↔ SE process, but with NW_pt and NE_pt:
