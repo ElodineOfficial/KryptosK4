@@ -67,7 +67,7 @@ Read squares in this order:
  6 → 1 →  4 → 13 → 18 → 23 →  2 →  7
 Result: DONOTLOCATETHEBERLINCLOC
 
-6. Build the second half of the message (NW ↔ NE)
+6. [This needs a rewrite] Build the second half of the message (NW ↔ NE)
 Exactly mirror the SW ↔ SE process, but with NW_pt and NE_pt:
 Rotate NW_pt left by 12.
 Form Δ′ where for each i:
