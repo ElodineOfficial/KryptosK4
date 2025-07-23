@@ -58,8 +58,7 @@ Caesar shift each letter –15 (≡ +11) → OTQJBEZEVHLMGUMPVVJEMWJS.
 Vigenère‑decrypt with the key LICHT →[this string will still not be coherent english] 
 DLOCITRCOOAEENTENTCLBOHL
 
-5.
-Take: DLOCITRCOOAEENTENTCLBOHL
+5. Take: DLOCITRCOOAEENTENTCLBOHL
 Fill a 4 × 6 grid row‑wise with the 24 letters.
 Number the squares 0‑23 in the same row‑wise order.
 Read squares in this order:
