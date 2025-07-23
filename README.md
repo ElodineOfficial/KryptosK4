@@ -1,4 +1,5 @@
 This is a technical text dump of how these scripts work and solve the first half of K4.
+Update 7/23: I'm cleaning up a lot of readability and math here so that things are easy to follow along with. Some of the code now needs to be updated to better follow step4 and 5 along with the more simplified workflow.
 
 Raw K4: OBKR UOXOGHULBSOLIFBBWFLRVQQPRNGKSSO TWTQSJQSSEKZZWATJKLUDIAWINFBNYP VTTMZFPKWGDKZXTJCDIGKUHUAUEKCAR
 
@@ -51,21 +52,23 @@ SW_pt = LZYAMAFHKEASTFYBKQCVPIQA
 SE_pt = WEDKGSSXZSQQEKQNWESTDIRR  
 
 4. Build the first half of the message (SW ↔ SE)
-Rotate the SW_pt string left by 12 letters.
- e.g. if SW_pt = ABC… (24 letters), rotated = letters 13–24 then 1–12.
-Compute a 24‑letter “difference” string Δ where for each position i:
- Δᵢ = (SE_ptᵢ – rotated_SW_ptᵢ) mod 26 → letter
-Caesar‑shift Δ by – 15 (i.e. subtract 15, mod 26).
-Vigenère‑decrypt the result with key “LICHT” (same method as before). You get a 24‑letter pre‑tour text: DLOCITRCOOAEENTENTCLBOHL
-Lay that into a 4×6 grid, row by row:
- D L O C I T
-R C O O A E
-E N T E N T
-C L B O H L
-Re‑order by the “geometric tour” index sequence (row‑major positions 0…23): [0,9,16,21,14,19,8,3,10,5,12,17,22,15,20,11,6,1,4,13,18,23,2,7] That means your final first‑half message is the letters at those indices in the 24‑letter row‑major string:
-DONOTLOCATETHEBERLINCLOC
+Rotate SW 12 places left → TFYBKQCVPIQALZYAMAFHKEAS.
+Subtract it from SE letter‑wise (mod 26) → DIFYQTOTKWABVJBEKKYTBLYH.
+Caesar shift each letter –15 (≡ +11) → OTQJBEZEVHLMGUMPVVJEMWJS.
+Vigenère‑decrypt with the key LICHT →[this string will still not be coherent english] 
+DLOCITRCOOAEENTENTCLBOHL
 
-5. Build the second half of the message (NW ↔ NE)
+5.
+Take: DLOCITRCOOAEENTENTCLBOHL
+Fill a 4 × 6 grid row‑wise with the 24 letters.
+Number the squares 0‑23 in the same row‑wise order.
+Read squares in this order:
+0 →  9 → 16 → 21 → 14 → 19 →  8 →  3 →
+10 → 5 → 12 → 17 → 22 → 15 → 20 → 11 →
+ 6 → 1 →  4 → 13 → 18 → 23 →  2 →  7
+
+
+6. Build the second half of the message (NW ↔ NE)
 Exactly mirror the SW ↔ SE process, but with NW_pt and NE_pt:
 Rotate NW_pt left by 12.
 Form Δ′ where for each i:
