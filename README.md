@@ -51,6 +51,8 @@ NE_pt = JNREASTZDLTFBXUJLBFJDALS
 SW_pt = LZYAMAFHKEASTFYBKQCVPIQA  
 SE_pt = WEDKGSSXZSQQEKQNWESTDIRR  
 
+
+<Steps from here on out are speculative, and do not shake out in pen and paper>
 4. Build the first half of the message (SW ↔ SE)
 Rotate SW 12 places left → TFYBKQCVPIQALZYAMAFHKEAS.
 Subtract it from SE letter‑wise (mod 26) → DIFYQTOTKWABVJBEKKYTBLYH.
